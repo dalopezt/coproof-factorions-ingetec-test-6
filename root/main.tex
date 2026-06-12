@@ -1,9 +1,11 @@
-**Theorem.** The set of natural numbers equal to the sum of the factorials of their own decimal digits is exactly $\{1, 2, 145, 40585\}$. That is, defining
+**Theorem.** The set of natural numbers that are equal to the sum of the factorials of their own digits is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{\, n \in \mathbb{N} \mid \sigma(n) = n \,\} = \{1,\, 2,\, 145,\, 40585\},$$
+where $\sigma(n)$ denotes the digit factorial sum of $n$.
 
-$$f(n) = \sum_{d \,\in\, \mathrm{digits}_{10}(n)} d!$$
+*Proof.* We show the two set inclusions separately.
 
-where $\mathrm{digits}_{10}(n)$ denotes the multiset of base-10 digits of $n$, we have
+$(\subseteq)$ Let $n \in \mathbb{N}$ satisfy $\sigma(n) = n$. By \textbf{Digit Factorial Sum Upper Bound}, any fixed point of $\sigma$ satisfies $n \leq 2{,}540{,}160$. Hence $n$ belongs to the set $\{\, n \in \mathbb{N} \mid \sigma(n) = n \text{ and } n \leq 2{,}540{,}160\,\}$. Applying \textbf{Digit Factorial Sum Finite Solutions}, this bounded set equals $\{1, 2, 145, 40585\}$, so $n \in \{1, 2, 145, 40585\}$.
 
-$$\{n \in \mathbb{N} \mid f(n) = n\} = \{1,\, 2,\, 145,\, 40585\}.$$
+$(\supseteq)$ Let $n \in \{1, 2, 145, 40585\}$. By \textbf{Digit Factorial Sum Finite Solutions}, every element of this finite set satisfies both $\sigma(n) = n$ and $n \leq 2{,}540{,}160$; in particular, $\sigma(n) = n$.
 
-*Proof.* Unsolved.
+Since both inclusions hold, the equality of sets is established. $\blacksquare$
